@@ -16,17 +16,48 @@
 <body>
     <h4>NUMERI DA 1 A 1000</h4>
       <div id ="divv"></div>
-    <script id= "NUMERI" type  = "text/javascript">
-        b=document.getElementById("divv");
-        a=1;
-        c=0;
+      <button id="miobottone" onclick="genera(),genera1();">generaprimi</button>
+    <script>
+      
+      function genera() {
+        let c=0;
         for(let a=1;a<100;a++){
-        if(a % 10 == 0){
-            document.write("<span style='color:red;'>"+" "+a + " " +"</span>");
-           c++
+        if(IsPrime(a)){
+            document.write("<span> "+a +" </span>");
+           c++;
             }
         }
-           document.write("numeri primi sono"+c)
+           document.write("numeri primi da 1 a 100 sono "+c);
+           document.write("<br>");
+        }
+
+        function genera1() {
+        let c=0;
+        for(let a=1;a<200;a++){
+        if(IsPrime(a)){
+            document.write("<span> "+a+" </span>");
+           c++;
+            }
+        }
+           document.write("numeri primi da 1 a 200 sono "+c);
+           document.write("<br>");
+        }
+
+           function IsPrime(n) {
+                // restituisce true se il numero n è primo cioè ha
+                //come fattori solo 1 e n
+                // restituisce false se il numero n non è primo
+                //cioè ha un numero di fattori > 2
+              let bOut=true;
+                  for(fattore=2;(fattore<=n/2);fattore++)
+                        {
+                           if (n%fattore==0)
+                                    {
+                                        bOut=false;
+                                    }
+                        }
+               return bOut;
+            }
     </script>
 </body>
-</html>
+</html
