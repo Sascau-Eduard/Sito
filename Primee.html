@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0", initial-scale="1.0">
+    <title>Document</title>
+    <style>
+    #divv{
+        border: 5px outset red;
+  background-color: black;
+  text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h4>NUMERI DA 1 A 1000</h4>
+      <div id ="divv"></div>
+      <button id="miobottone" onclick="genera(),genera1();">generaprimi</button>
+    <script>
+      
+      function genera() {
+        var c=0;
+        var n1 = 0
+        const n2= []
+        
+        
+        for(let a=10000;a<10100;a++){
+        if(IsPrime(a)){
+            document.write("<span> "+a +" </span>");
+           c++;
+           n1=a
+           n2.push(n1)
+            }
+            
+        }
+           document.write("numeri primi da 1 a 100 sono "+c);
+           document.write("<br>");
+           document.write("numerimoltiplicati a copppie ");
+           var h
+           for(let a=0;a<n2.length;a++){
+           h = n2[a]*n2[a++]
+           document.write(h+" ");
+        }
+
+           function IsPrime(n) {
+                // restituisce true se il numero n è primo cioè ha
+                //come fattori solo 1 e n
+                // restituisce false se il numero n non è primo
+                //cioè ha un numero di fattori > 2
+              let bOut=true;
+                  for(fattore=2;(fattore<=n/2);fattore++)
+                        {
+                           if (n%fattore==0)
+                                    {
+                                        bOut=false;
+                                    }
+                        }
+               return bOut;
+            }
+      }
+    </script>
+</body>
+</html>
